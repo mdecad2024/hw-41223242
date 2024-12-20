@@ -102,6 +102,9 @@
 <p>41223224:<yt-formatted-string class="style-scope ytd-watch-metadata" force-default-style="">flipper sldprt、</yt-formatted-string>support bonbine、<yt-formatted-string class="style-scope ytd-watch-metadata" force-default-style="">plastique flipper</yt-formatted-string></p>
 <p>41223240:<yt-formatted-string class="style-scope ytd-watch-metadata" force-default-style="">Piece composite sldprt、</yt-formatted-string>Piece metalique gauche sldprt<span> </span></p>
 <p>41223242:<yt-formatted-string class="style-scope ytd-watch-metadata" force-default-style="">Plongeur Batture、</yt-formatted-string>Platine Batteur</p>
+<p></p>
+<p></p>
+<p></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/bBGl_hJDa64" width="560"></iframe></p>
 <p></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/YnNHMKNOhzA" width="560"></iframe></p>
@@ -115,7 +118,80 @@
 <p></p>
 <p></p>
 <p></p>
-<p></p><h1>HW2</h1>
+<p></p>
+<script src="/static/jsc3d.js" type="text/javascript"></script>
+<div id="models"><canvas height="300" id="cv1" style="border: 1px solid;" width="400"></canvas> <canvas height="300" id="cv2" style="border: 1px solid;" width="400"></canvas> <!-- 可以添加更多的 canvas --></div>
+<div style="width: 400px; height: 70px; border: 1px solid;">Model Color:<input id="mdlClr" onchange="changeOption('ModelColor',this.value)" style="margin-right: 50px;" type="color" value="#00ff40"/> Back Color1:<input id="bckClr1" onchange="changeOption('BackgroundColor1',this.value)" style="margin-right: 50px;" type="color"/> Back Color2:<input id="bckClr2" onchange="changeOption('BackgroundColor2',this.value)" type="color"/><br/> Render Mode:<select id="render" onchange="changeOption('RenderMode',this.value)">
+<option>Flat</option>
+<option>Point</option>
+<option>Wireframe</option>
+<option>Smooth</option>
+</select>Definition:<select id="defini" onchange="changeOption('Definition',this.value)">
+<option>Standard</option>
+<option>low</option>
+<option>high</option>
+</select></div>
+<script type="text/javascript">
+var viewers = [];
+
+function getOptions(){
+    var mc = document.getElementById("mdlClr").value;
+    var bc1 = document.getElementById("bckClr1").value;
+    var bc2 = document.getElementById("bckClr2").value;
+    var ren = document.getElementById("render").value;
+    var def = document.getElementById("defini").value;
+    return {ModelColor: mc, BackgroundColor1: bc1, BackgroundColor2: bc2, RenderMode: ren, Definition: def};
+}
+
+function readSTLfile(opt, canvasId){
+    var canvas = document.getElementById(canvasId);
+    var viewer = new JSC3D.Viewer(canvas);
+    viewer.setParameter('SceneUrl', opt.SceneUrl);
+    viewer.setParameter('InitRotationX', 0);
+    viewer.setParameter('InitRotationY', 0);
+    viewer.setParameter('InitRotationZ', 0);
+    viewer.setParameter('ModelColor', opt.ModelColor);
+    viewer.setParameter('BackgroundColor1', opt.BackgroundColor1);
+    viewer.setParameter('BackgroundColor2', opt.BackgroundColor2);
+    viewer.setParameter('RenderMode', opt.RenderMode);
+    viewer.setParameter('Definition', opt.Definition);
+    viewer.init();
+    viewer.update();
+    viewers.push(viewer); // 保存 viewer 實例
+}
+
+function changeOption(strOpt,strValue){
+    console.log("change " + strOpt + " to " + strValue);
+    viewers.forEach(viewer => {
+        viewer.setParameter(strOpt, strValue);
+        viewer.init();
+        viewer.update();
+    });
+}
+
+function openByUrl(){
+    var url = document.getElementById("url").value;
+    var opt = getOptions();
+    opt.SceneUrl = url;
+    // 可以添加更多的 STL URL
+    readSTLfile(opt, 'cv1'); // 為每個 canvas 調用
+    readSTLfile(opt, 'cv2'); // 第二個 canvas
+}
+
+function openByGet(){
+    var urls = [
+        "https://s104.cycu.org/~41223242/Platine Batteur.stl",
+        "https://s104.cycu.org/~41223242/Plongeur Batture.stl"
+    ];
+    var opt = getOptions();
+    urls.forEach((url, index) => {
+        opt.SceneUrl = url;
+        readSTLfile(opt, 'cv' + (index + 1)); // 動態生成 canvas ID
+    });
+}
+
+openByGet();
+</script><h1>HW2</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">作業2（10%）：</span></span></p>
 <p style="padding-left: 30px;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">利用 Solvespace 與 NX 建立</span></span><a href="https://mde.tw/cad2024/content/BonW.html"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Balance on Wheels</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">群組立件</span></span></p>
 <hr/>
@@ -186,8 +262,7 @@
 <p style="padding-left: 30px;"></p>
 <p style="padding-left: 30px;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/qVq-LLxJJbY" width="560"></iframe></p>
 <p style="padding-left: 30px;"><a href="https://mdecad2024.github.io/hw-41223242/cmsimde/static/viewstl.html?src=https://s104.cycu.org/~41223242/零件1.stl">https://mdecad2024.github.io/hw-41223242/cmsimde/static/viewstl.html?src=https://s104.cycu.org/~41223242/零件1.stl</a></p>
-<p></p>
-<h2>練習2</h2>
+<p></p><h2>練習2</h2>
 <p style="padding-left: 30px;"></p>
 <p style="padding-left: 30px;"><img alt="" height="316" src="/images/螢幕擷取畫面 2024-10-18 151843.png" width="562"/></p>
 <p style="padding-left: 30px;"></p>
