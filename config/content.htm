@@ -215,7 +215,7 @@ openByGet();
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/V0CW_oIHhx0" width="560"></iframe></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hdKL7anE-Y0" width="560"></iframe></p>
 <script src="/static/jsc3d.js" type="text/javascript"></script>
-<div id="models"><canvas height="300" id="cv1" style="border: 1px solid;" width="400"></canvas> <canvas height="300" id="cv2" style="border: 1px solid;" width="400"></canvas> <!-- 可以添加更多的 canvas --></div>
+<div id="models"><canvas height="300" id="cv1" style="border: 1px solid;" width="400"></canvas> <canvas height="300" id="cv2" style="border: 1px solid;" width="400"></canvas><canvas height="300" id="cv3" style="border: 1px solid;" width="400"></canvas> <!-- 可以添加更多的 canvas --></div>
 <div style="width: 400px; height: 70px; border: 1px solid;">Model Color:<input id="mdlClr" onchange="changeOption('ModelColor',this.value)" style="margin-right: 50px;" type="color" value="#00ff40"/> Back Color1:<input id="bckClr1" onchange="changeOption('BackgroundColor1',this.value)" style="margin-right: 50px;" type="color"/> Back Color2:<input id="bckClr2" onchange="changeOption('BackgroundColor2',this.value)" type="color"/><br/> Render Mode:<select id="render" onchange="changeOption('RenderMode',this.value)">
 <option>Flat</option>
 <option>Point</option>
@@ -276,7 +276,8 @@ function openByUrl(){
 function openByGet(){
     var urls = [
         "https://s104.cycu.org/~41223242/Solvespace Platine renvoie bille_sldprt.stl",
-        "https://s104.cycu.org/~41223242/Solvespace Plongeur Renvoi bille_sldprt.stl"
+        "https://s104.cycu.org/~41223242/Solvespace Plongeur Renvoi bille_sldprt.stl",
+        "https://s104.cycu.org/~41223242/組合.stl"
     ];
     var opt = getOptions();
     urls.forEach((url, index) => {
@@ -286,11 +287,7 @@ function openByGet(){
 }
 
 openByGet();
-</script>
-<p></p>
-<p></p>
-<p></p>
-<h1>HW3</h1>
+</script><h1>HW3</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">作業3（20%）：</span></span></p>
 <p style="padding-left: 30px;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">建立</span></span><a href="https://mde.tw/cad2024/content/BonW.html"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">車輪平衡</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">控制系統設計模擬場景</span></span></p>
 <p style="padding-left: 30px;"><a href="https://github.com/mdecycu/Balance_On_Wheels"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">https://github.com/mdecycu/Balance_On_Wheels</span></span></a></p>
