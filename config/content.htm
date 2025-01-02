@@ -110,14 +110,14 @@
 <p></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/bzqoXeGGZkA" width="560"></iframe></p>
 <p></p>
-<p></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/RfmC1x4MLBM" width="560"></iframe></p>
 <p></p>
 <p></p>
 <p></p>
 <p></p>
 <p></p>
 <script src="/static/jsc3d.js" type="text/javascript"></script>
-<div id="models"><canvas height="300" id="cv1" style="border: 1px solid;" width="400"></canvas> <canvas height="300" id="cv2" style="border: 1px solid;" width="400"></canvas> <!-- 可以添加更多的 canvas --></div>
+<div id="models"><canvas height="300" id="cv1" style="border: 1px solid;" width="400"></canvas> <canvas height="300" id="cv2" style="border: 1px solid;" width="400"></canvas><canvas height="300" id="cv3" style="border: 1px solid;" width="400"></canvas> <!-- 可以添加更多的 canvas --></div>
 <div style="width: 400px; height: 70px; border: 1px solid;">Model Color:<input id="mdlClr" onchange="changeOption('ModelColor',this.value)" style="margin-right: 50px;" type="color" value="#00ff40"/> Back Color1:<input id="bckClr1" onchange="changeOption('BackgroundColor1',this.value)" style="margin-right: 50px;" type="color"/> Back Color2:<input id="bckClr2" onchange="changeOption('BackgroundColor2',this.value)" type="color"/><br/> Render Mode:<select id="render" onchange="changeOption('RenderMode',this.value)">
 <option>Flat</option>
 <option>Point</option>
@@ -178,7 +178,8 @@ function openByUrl(){
 function openByGet(){
     var urls = [
         "https://s104.cycu.org/~41223242/Platine Batteur.stl",
-        "https://s104.cycu.org/~41223242/Plongeur Batture.stl"
+        "https://s104.cycu.org/~41223242/Plongeur Batture.stl",
+        "https://s104.cycu.org/~41223242/彈珠檯組合.stl"
     ];
     var opt = getOptions();
     urls.forEach((url, index) => {
@@ -188,8 +189,7 @@ function openByGet(){
 }
 
 openByGet();
-</script>
-<h1>HW2</h1>
+</script><h1>HW2</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">作業2（10%）：</span></span></p>
 <p style="padding-left: 30px;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">利用 Solvespace 與 NX 建立</span></span><a href="https://mde.tw/cad2024/content/BonW.html"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Balance on Wheels</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">群組立件</span></span></p>
 <hr/>
